@@ -6,6 +6,9 @@
 ## 📌 Resumen del Proyecto
 Este repositorio contiene la implementación técnica de mi **Trabajo de Final de Máster (TFM)**. El objetivo es crar una cartera que supere al índice S&P 500 mediante un modelo de clasificación **XGBoost** que no solo analiza el precio, sino que entiende el contexto macroeconómico (Inflación, VIX, Tipos de Interés).
 
+## 📊 Visualización de Resultados
+> **Nota:** ubir una captura de tu gráfico de rentabilidad acumulada y la pegues. Ver el Alpha positivo visualmente es el mejor argumento de venta.
+
 ### Métricas Clave (Comisiones 0.25%):
 - **ROI IA Top 10:** ~68% (Frente al 49% del S&P 500)
 - **Alpha Generado:** $+1,800 aprox. en el periodo evaluado.
