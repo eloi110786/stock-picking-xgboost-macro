@@ -8,20 +8,13 @@ Este repositorio contiene la implementación técnica del **Trabajo de Final de 
 
 El objetivo principal es diseñar un sistema automatizado de asignación de activos que supere al índice de referencia mediante un **clasificador ternario basado en XGBoost**, integrando dinámicamente indicadores técnicos de mercado con variables macroeconómicas estructurales y un filtro de confianza avanzado (*Gatekeeper*).
 
-## 📊 Visualización de Resultados y Métricas Clave
+## 📊  Métricas Clave
 
 ### Rendimiento del Backtesting (Periodo Out-of-sample, Fricciones del 0.25%):
 * **ROI de la Cartera IA Top 10:** **70.04%** (superando significativamente al índice de referencia).
 * **Generación de Alfa:** **+20%** de Alfa respecto al mercado.
 * **Gestión del Riesgo:** Mitigación de caídas mediante la asignación dinámica de liquidez (*Cash*) en entornos de alta volatilidad macroeconómica controlados por el filtro *Gatekeeper*.
 
-### Cuadro de Mando Consolidado
-Aquí se presenta la ejecución final del sistema y las métricas de atribución de rendimiento:
-![Dashboard de Rendimiento](Datos/DASHBOARD_COMPLETO_FINAL.png)
-
-### Diversificación del Universo de Activos
-Distribución sectorial de las 50 acciones que componen el universo base del modelo:
-![Distribución Sectorial](Datos/grafico_sectores_tfm.png)
 
 ## 🏗️ Estructura del Pipeline de Código
 El archivo principal `tfm_predictive_model_final.ipynb` unifica las siguientes fases de desarrollo de software e ingeniería financiera:
