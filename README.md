@@ -4,28 +4,43 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 📌 Resumen del Proyecto
-Este repositorio contiene la implementación técnica de mi **Trabajo de Final de Máster (TFM)**. El objetivo es crar una cartera que supere al índice S&P 500 mediante un modelo de clasificación **XGBoost** que no solo analiza el precio, sino que entiende el contexto macroeconómico (Inflación, VIX, Tipos de Interés).
+Este repositorio contiene la implementación técnica del **Trabajo de Final de Máster (TFM)** titulado: *"Optimización de Carteras mediante Aprendizaje Supervisado: Un enfoque híbrido basado en XGBoost con indicadores macroeconómicos y técnicos (2015-2025)"*.
 
-## 📊 Visualización de Resultados
-> **Nota:** ubir una captura de tu gráfico de rentabilidad acumulada y la pegues. Ver el Alpha positivo visualmente es el mejor argumento de venta.
+El objetivo principal es diseñar un sistema automatizado de asignación de activos que supere al índice de referencia mediante un **clasificador ternario basado en XGBoost**, integrando dinámicamente indicadores técnicos de mercado con variables macroeconómicas estructurales y un filtro de confianza avanzado (*Gatekeeper*).
 
-### Métricas Clave (Comisiones 0.25%):
-- **ROI IA Top 10:** ~68% (Frente al 49% del S&P 500)
-- **Alpha Generado:** $+1,800 aprox. en el periodo evaluado.
-- **Gestión de Riesgo:** El modelo aumenta la liquidez (Cash) en periodos de alta volatilidad macro.
+## 📊 Visualización de Resultados y Métricas Clave
 
-## 🏗️ Estructura del Pipeline
-1. **Ingestión:** Conexión con Yahoo Finance y FRED (Federal Reserve Economic Data).
-2. **Procesamiento:** Cálculo de indicadores técnicos (RSI, MACD, Medias) y alineación de series macro.
-3. **Modelado:** Clasificación binaria con XGBoost para predecir la probabilidad de superar la mediana del mercado.
-4. **Backtesting:** Simulación mensual con costes de transacción realistas (0.25%).
+### Rendimiento del Backtesting (Periodo Out-of-sample, Fricciones del 0.25%):
+* **ROI de la Cartera IA Top 10:** **70.04%** (superando significativamente al índice de referencia).
+* **Generación de Alfa:** **+20%** de Alfa respecto al mercado.
+* **Gestión del Riesgo:** Mitigación de caídas mediante la asignación dinámica de liquidez (*Cash*) en entornos de alta volatilidad macroeconómica controlados por el filtro *Gatekeeper*.
 
-## 🛠️ Cómo ejecutar
-1. Clona este repositorio.
-2. Sube el archivo `.ipynb` a **Google Colab**.
-3. Sigue las instrucciones de la primera celda sobre el **Reinicio de Sesión**.
+### Cuadro de Mando Consolidado
+Aquí se presenta la ejecución final del sistema y las métricas de atribución de rendimiento:
+![Dashboard de Rendimiento](Datos/DASHBOARD_COMPLETO_FINAL.png)
 
----
-**Autor:** Eloi Arjona  
-**Tutor:** Rafael Luque Ocaña  
-**Institución:** Universitat Oberta de Catalunya (UOC)
+### Diversificación del Universo de Activos
+Distribución sectorial de las 50 acciones que componen el universo base del modelo:
+![Distribución Sectorial](Datos/grafico_sectores_tfm.png)
+
+## 🏗️ Estructura del Pipeline de Código
+El archivo principal `tfm_predictive_model_final.ipynb` unifica las siguientes fases de desarrollo de software e ingeniería financiera:
+
+1. **Feature Engineering:** Construcción de features macroeconómicas (Bono 10Y, Inflación, Curva de Tipos, VIX) y técnicas (RSI, MACD, Distancia a SMA 200).
+2. **Alineación Temporal de Datos:** Sincronización cronológica exhaustiva de fuentes de datos de distinta frecuencia.
+3. **Modelado Predictivo:** Configuración de un clasificador ternario (XGBoost) optimizado y acoplado a un filtro probabilístico (*Gatekeeper > 45%*) para el filtrado de señales de compra redundantes o ruidosas.
+4. **Simulador Financiero:** Motor de backtesting con cálculo e impacto explícito de comisiones bancarias por operación (0.25%).
+
+## 📁 Estructura del Repositorio
+```text
+├── README.md                                    <- Manual de usuario e instrucciones del proyecto.
+├── TFM_Eloi_Arjona_Guimera_Memoria_Final.pdf    <- Memoria del proyecto.
+├── tfm_predictive_model_final.ipynb             <- Pipeline de código unificado en Python.
+├── requirements.txt                             <- Dependencias y librerías requeridas (incluye SHAP).
+└── Datos/                                       <- Carpeta de almacenamiento de datos e imágenes.
+    ├── universo_tfm.csv                         <- Histórico base de los 50 activos.
+    ├── tabla_maestra_tfm.csv                    <- Dataset integrado con todas las features.
+    ├── predicciones_modelo.csv                  <- Outputs y etiquetas del clasificador.
+    ├── dataset_tfm_dashboard.csv                <- Datos procesados para el cuadro de mando.
+    ├── grafico_sectores_tfm.png                 <- Gráfico de distribución de activos.
+    └── dashboard.png                            <- Captura del panel de control analítico.
