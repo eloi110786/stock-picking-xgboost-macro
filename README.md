@@ -19,10 +19,11 @@ El objetivo principal es diseñar un sistema automatizado de asignación de acti
 ## 🏗️ Estructura del Pipeline de Código
 El archivo principal `tfm_predictive_model_final.ipynb` unifica las siguientes fases de desarrollo de software e ingeniería financiera:
 
-1. **Feature Engineering:** Construcción de features macroeconómicas (Bono 10Y, Inflación, Curva de Tipos, VIX) y técnicas (RSI, MACD, Distancia a SMA 200).
-2. **Alineación Temporal de Datos:** Sincronización cronológica exhaustiva de fuentes de datos de distinta frecuencia.
-3. **Modelado Predictivo:** Configuración de un clasificador ternario (XGBoost) optimizado y acoplado a un filtro probabilístico (*Gatekeeper > 45%*) para el filtrado de señales de compra redundantes o ruidosas.
-4. **Simulador Financiero:** Motor de backtesting con cálculo e impacto explícito de comisiones bancarias por operación (0.25%).
+1.**Universo de acciones:** Se escogen 50 acciones estratrificadas por sectores del SP500.
+2. **Feature Engineering:** Construcción de features macroeconómicas (Bono 10Y, Inflación, Curva de Tipos, VIX) y técnicas (RSI, MACD, Distancia a SMA 200) e inflación.
+3. **Alineación Temporal de Datos:** Sincronización cronológica exhaustiva de fuentes de datos de distinta frecuencia.
+4. **Modelado Predictivo:** Configuración de un clasificador ternario (XGBoost) optimizado y acoplado a un filtro probabilístico (*Gatekeeper > 45%*) para el filtrado de señales de compra redundantes o ruidosas.
+5. **Simulador Financiero:** Motor de backtesting con cálculo e impacto explícito de comisiones bancarias por operación (0.25%).
 
 ## 📁 Estructura del Repositorio
 ```text
