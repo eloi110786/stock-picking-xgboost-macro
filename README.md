@@ -6,7 +6,7 @@
 ## 📌 Resumen del Proyecto
 Este repositorio contiene la implementación técnica del **Trabajo de Final de Máster (TFM)** titulado: *"Optimización de Carteras mediante Aprendizaje Supervisado: Un enfoque híbrido basado en XGBoost con indicadores macroeconómicos y técnicos (2015-2025)"*.
 
-El objetivo principal es diseñar un sistema automatizado de asignación de activos que supere al índice de referencia mediante un **clasificador ternario basado en XGBoost**, integrando dinámicamente indicadores técnicos de mercado con variables macroeconómicas estructurales y un filtro de confianza avanzado (*Gatekeeper*).
+El objetivo principal es diseñar un sistema automatizado de asignación de activos que supere al índice de referencia mediante un **clasificador ternario basado en XGBoost**, integrando dinámicamente indicadores técnicos de mercado con variables macroeconómicas estructurales.
 
 ## 📊  Métricas Clave
 
